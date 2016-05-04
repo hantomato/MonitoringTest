@@ -17,11 +17,6 @@ public class Logcat {
             .myPid());
 
     public static StringBuilder getLog(String targetPid) {
-        Logger.logd("getLog. pid:" + android.os.Process.myPid());
-        Logger.logd("getLog. tid:" + android.os.Process.myTid());
-        Logger.logd("getLog. uid:" + android.os.Process.myUid());
-        Log.d(TAG, "pid : " + processId);
-
         StringBuilder builder = new StringBuilder();
 
         try {
@@ -40,7 +35,7 @@ public class Logcat {
                     builder.append(line + "\n");
                 } else {
 //                    if (line.contains(targetPid)) {
-                    if (line.contains(targetPid) && line.contains("AndroidRuntime")) {
+                    if (line.contains(targetPid) && line.contains("AndroidRuntime")) { // crash 로그만 필터링.
                         builder.append(line + "\n");
                     }
                 }
