@@ -20,8 +20,9 @@
 
 
         <service
-            android:name=".MyService"
+            android:name=".MonitoringService"
             android:enabled="true"
+            android:process=":msservice"
             android:exported="true"></service>
     </application>
 

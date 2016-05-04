@@ -46,7 +46,7 @@ public class LogcatViewActivity extends AppCompatActivity {
         Thread thd = new Thread(new Runnable() {
             @Override
             public void run() {
-                StringBuilder sb = Logcat.getLog();
+                StringBuilder sb = Logcat.getLog(null);
                 Log.d(TAG, "sb size : " + sb.length());
                 strLog = sb.toString();
 

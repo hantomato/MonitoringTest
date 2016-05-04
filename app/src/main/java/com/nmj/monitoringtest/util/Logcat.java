@@ -1,5 +1,6 @@
 package com.nmj.monitoringtest.util;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -15,11 +16,12 @@ public class Logcat {
     private static final String processId = Integer.toString(android.os.Process
             .myPid());
 
-    public static StringBuilder getLog() {
-        Thread dd = Thread.currentThread();
-        Log.d(TAG, "do getLog : " + dd.getId());
-
+    public static StringBuilder getLog(String targetPid) {
+        Logger.logd("getLog. pid:" + android.os.Process.myPid());
+        Logger.logd("getLog. tid:" + android.os.Process.myTid());
+        Logger.logd("getLog. uid:" + android.os.Process.myUid());
         Log.d(TAG, "pid : " + processId);
+
         StringBuilder builder = new StringBuilder();
 
         try {
@@ -34,10 +36,14 @@ public class Logcat {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-//                if (line.contains(processId)) { // 내 프로세스의 로그만 구하자.
+                if (TextUtils.isEmpty(targetPid)) {
                     builder.append(line + "\n");
-                    // 필터링이 필요하다면 여기서 할수 있겠다.
-//                }
+                } else {
+//                    if (line.contains(targetPid)) {
+                    if (line.contains(targetPid) && line.contains("AndroidRuntime")) {
+                        builder.append(line + "\n");
+                    }
+                }
             }
             bufferedReader.close();
         } catch (IOException ex) {

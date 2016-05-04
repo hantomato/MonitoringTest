@@ -19,7 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn1"
+        android:text="btn1 - popup LogcatViewActivity"
         android:id="@+id/button1"
         android:onClick="onClick"
         android:layout_marginLeft="27dp"
@@ -27,7 +27,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn2"
+        android:text="btn2 - bindService"
         android:id="@+id/button2"
         android:onClick="onClick"
         android:layout_marginLeft="27dp"
@@ -35,7 +35,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn3"
+        android:text="btn3 - set test log"
         android:id="@+id/button3"
         android:onClick="onClick"
         android:layout_marginLeft="27dp"
@@ -43,7 +43,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn4"
+        android:text="btn4 - set pid"
         android:id="@+id/button4"
         android:onClick="onClick"
         android:layout_marginLeft="27dp"
@@ -51,8 +51,24 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn5"
+        android:text="btn5 - make crash"
         android:id="@+id/button5"
+        android:onClick="onClick"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="btn6"
+        android:id="@+id/button6"
+        android:onClick="onClick"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="btn7"
+        android:id="@+id/button7"
         android:onClick="onClick"
         android:layout_marginLeft="27dp"
         android:layout_marginStart="27dp" />
